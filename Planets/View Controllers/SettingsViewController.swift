@@ -13,27 +13,21 @@ class SettingsViewController: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet var plutoToggle: UISwitch!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateViews()
     }
-    
 
+    
     //MARK: - IBActions
     @IBAction func didTogglePluto(_ sender: UISwitch) {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(sender.isOn, forKey: .shouldShowPlutoKey)
     }
     
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func updateViews() {
+        plutoToggle.isOn = UserDefaults.standard.bool(forKey: .shouldShowPlutoKey)
     }
-    */
 
 }

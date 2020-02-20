@@ -14,7 +14,8 @@ class PlanetsCollectionViewController: UICollectionViewController {
 
     // MARK: - Unwind
     @IBAction func unwindToPlanetCollectionViewController(segue: UIStoryboardSegue) {
-        
+        // Runs anytime that the settings controller is dismissed
+        self.collectionView.reloadData()
     }
 
     // MARK: UICollectionViewDataSource
