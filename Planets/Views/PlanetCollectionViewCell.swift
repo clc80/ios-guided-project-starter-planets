@@ -10,10 +10,20 @@ import UIKit
 
 class PlanetCollectionViewCell: UICollectionViewCell {
     
+    var planet: Planet? {
+        didSet {
+            updateViews()
+        }
+    }
+    
     //MARK: - IBOutlets
     @IBOutlet var planetImageView: UIImageView!
     @IBOutlet var planetNameLabel: UILabel!
     
     
+    private func updateViews() {
+        planetNameLabel.text = planet?.name
+        planetImageView.image = planet?.image
+    }
     
 }
