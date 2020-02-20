@@ -75,7 +75,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1t7-Rj-00h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="931.88405797101461" y="151.33928571428569"/>
+            <point key="canvasLocation" x="719" y="151"/>
         </scene>
         <!--Settings-->
         <scene sceneID="hfe-sR-4Iz">
@@ -114,7 +114,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="KM5-j9-EYN">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Obm-V6-n2a">
                             <connections>
-                                <action selector="doneButtonTapped:" destination="SUl-1x-GW4" id="vjf-xp-HTd"/>
+                                <segue destination="nVC-M1-5vQ" kind="unwind" unwindAction="unwindToPlanetCollectionViewControllerWithSegue:" id="KDE-Dk-drE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -123,8 +123,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtE-Nt-vkB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="nVC-M1-5vQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2813" y="151"/>
+            <point key="canvasLocation" x="2325" y="151"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qNP-Ix-FtO">
@@ -160,7 +161,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbG-IJ-IiN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2069.5652173913045" y="150.66964285714286"/>
+            <point key="canvasLocation" x="1643" y="151"/>
         </scene>
     </scenes>
 </document>

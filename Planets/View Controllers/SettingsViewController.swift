@@ -24,8 +24,6 @@ class SettingsViewController: UIViewController {
     @IBAction func didTogglePluto(_ sender: UISwitch) {
     }
     
-    @IBAction func doneButtonTapped(_ sender: Any) {
-    }
     
     
     /*
