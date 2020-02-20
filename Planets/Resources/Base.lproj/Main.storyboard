@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Planets Collection View Controller-->
         <scene sceneID="Aue-5R-pdm">
             <objects>
-                <collectionViewController id="oDN-1P-XsG" sceneMemberID="viewController">
+                <collectionViewController id="oDN-1P-XsG" customClass="PlanetsCollectionViewController" customModule="Planets" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="asQ-2b-Wdv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="planetCell" id="2Ks-hv-RvF">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="planetCell" id="2Ks-hv-RvF" customClass="PlanetCollectionViewCell" customModule="Planets" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="120" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="f8D-vO-nF5">
@@ -54,6 +54,10 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="120" height="140"/>
+                                <connections>
+                                    <outlet property="planetImageView" destination="kRL-OM-Jso" id="Gw3-Td-vuB"/>
+                                    <outlet property="planetNameLabel" destination="Dvd-hP-aPt" id="T8H-Ln-5OU"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -76,7 +80,7 @@
         <!--Settings-->
         <scene sceneID="hfe-sR-4Iz">
             <objects>
-                <viewController id="SUl-1x-GW4" sceneMemberID="viewController">
+                <viewController id="SUl-1x-GW4" customClass="SettingsViewController" customModule="Planets" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Alu-Be-wzK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,6 +96,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4br-F1-ZLP">
                                         <rect key="frame" x="315" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="didTogglePluto:" destination="SUl-1x-GW4" eventType="valueChanged" id="UQm-nB-8Hb"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -104,7 +111,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iF9-1u-Si4"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="KM5-j9-EYN"/>
+                    <navigationItem key="navigationItem" title="Settings" id="KM5-j9-EYN">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Obm-V6-n2a">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="SUl-1x-GW4" id="vjf-xp-HTd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="plutoToggle" destination="4br-F1-ZLP" id="adh-0V-5QY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtE-Nt-vkB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
